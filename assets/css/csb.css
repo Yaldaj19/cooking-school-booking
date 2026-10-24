@@ -2455,6 +2455,27 @@
   font-size: .68rem; font-weight: 800; letter-spacing: .02em;
 }
 
+/* ── Shortcode grid wrapper ([bookaclass_classes] / _courses / _list) ────── */
+.csb-shortcode { margin-block: 2rem; }
+.csb-shortcode__head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap;
+}
+.csb-shortcode__title {
+  margin: 0; font-size: 1.4rem; font-weight: 800; color: var(--csb-text);
+  position: relative; padding-bottom: .5rem;
+}
+.csb-shortcode__title::after {
+  content: ""; position: absolute; inset-inline-start: 0; bottom: 0;
+  width: 3rem; height: 3px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--csb-accent), var(--csb-primary));
+}
+.csb-shortcode__more {
+  font-size: .9rem; font-weight: 700; color: var(--csb-primary);
+  text-decoration: none; white-space: nowrap;
+}
+.csb-shortcode__more:hover { text-decoration: underline; }
+
 /* Archive pagination styling lives in section 21 (.woocommerce-pagination),   */
 /* which the archive templates now emit via paginate_links( type => 'list' ).  */
 

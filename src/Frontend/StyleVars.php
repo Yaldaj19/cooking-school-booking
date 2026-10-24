@@ -180,6 +180,18 @@ class StyleVars {
 			return true;
 		}
 
+		// Any singular page/post embedding a BookaClass card-grid shortcode.
+		if ( is_singular() ) {
+			$post = get_post();
+			if ( $post instanceof \WP_Post ) {
+				foreach ( [ 'bookaclass_classes', 'bookaclass_courses', 'bookaclass_list' ] as $sc ) {
+					if ( has_shortcode( $post->post_content, $sc ) ) {
+						return true;
+					}
+				}
+			}
+		}
+
 		return false;
 	}
 

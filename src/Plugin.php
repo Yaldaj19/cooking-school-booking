@@ -33,6 +33,7 @@ use BookaClass\Frontend\Schema;
 use BookaClass\Frontend\SeoMeta;
 use BookaClass\Frontend\Sitemap;
 use BookaClass\Frontend\StyleVars;
+use BookaClass\Frontend\Shortcodes;
 use BookaClass\Install\Migrator;
 use BookaClass\Products\ProductTypes;
 use BookaClass\Frontend\MyAccount;
@@ -223,6 +224,9 @@ final class Plugin {
 
 		// Phase 8a — Front-end: inline :root CSS vars + enqueue csb.css.
 		( new StyleVars() )->init();
+
+		// Front-end: [bookaclass_classes] / [bookaclass_courses] / [bookaclass_list] card grids.
+		( new Shortcodes() )->init();
 
 		// Phase 7 — Admin: CSB coupon management.
 		( new CouponsPage() )->init();
